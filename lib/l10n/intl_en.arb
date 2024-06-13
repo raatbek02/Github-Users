@@ -1,0 +1,13 @@
+{
+  "users": "Users",
+  "unknown": "Unknown",
+  "followers": "Followers",
+  "following": "Following",
+  "location": "Location",
+  "blog": "Blog",
+  "company": "Company",
+  "userType": "User Type",
+  "yes": "Yes",
+  "no": "No",
+  "siteAdmin": "Site Admin"
+}
