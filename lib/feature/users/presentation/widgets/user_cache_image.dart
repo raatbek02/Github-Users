@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:github_users/core/common/widgets/loader.dart';
 
 class PersonCacheImage extends StatelessWidget {
   final String imageUrl;
@@ -37,9 +38,7 @@ class PersonCacheImage extends StatelessWidget {
         return _imageWidget(imageProvider);
       },
       placeholder: (context, url) {
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
+        return const Loader();
       },
       errorWidget: (context, url, error) {
         return _imageWidget(

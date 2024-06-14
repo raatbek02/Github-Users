@@ -25,7 +25,7 @@ class UsersListBloc extends Bloc<UsersListEvent, UsersListState> {
 
     emit(UsersListLoading(oldUsersList, isFirstFetch: true));
 
-    final failureOrPerson = await usersListUseCase(PageUsersParams(page: 1));
+    final failureOrPerson = await usersListUseCase(const PageUsersParams(page: 1));
 
     failureOrPerson.fold(
       (error) => emit(UsersListError("")),

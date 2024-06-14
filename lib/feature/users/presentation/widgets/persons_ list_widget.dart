@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:github_users/core/common/widgets/loader.dart';
 import 'package:github_users/feature/users/domain/entities/users_entity.dart';
 import 'package:github_users/feature/users/presentation/bloc/users_list_bloc/users_list_bloc.dart';
 import 'package:github_users/feature/users/presentation/bloc/users_list_bloc/users_list_event.dart';
@@ -72,9 +73,7 @@ class UsersList extends StatelessWidget {
   Widget _loadingIndicator() {
     return const Padding(
       padding: EdgeInsets.all(8.0),
-      child: Center(
-        child: CircularProgressIndicator(),
-      ),
+      child: Loader(),
     );
   }
 }
