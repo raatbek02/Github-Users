@@ -1,5 +1,5 @@
 import 'package:get_it/get_it.dart';
-import 'package:github_users/core/platform/network.info.dart';
+import 'package:github_users/core/connectivity/network_info.dart';
 import 'package:github_users/feature/users/data/datasourses/users_local_data_soure.dart';
 import 'package:github_users/feature/users/data/datasourses/users_remote_data_source.dart';
 import 'package:github_users/feature/users/data/repositories/users_repositoty_impl.dart';

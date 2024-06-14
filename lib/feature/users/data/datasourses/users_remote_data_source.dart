@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:github_users/core/error/exception.dart';
+import 'package:github_users/core/secrets/app_secrets.dart';
 import 'package:github_users/feature/users/data/models/users_detail_model.dart';
 import 'package:github_users/feature/users/data/models/users_model.dart';
 import 'package:http/http.dart' as http;
@@ -8,7 +9,6 @@ import 'package:http/http.dart' as http;
 abstract class UsersRemoteDataSource {
   Future<List<UsersModel>> getUsersList(int page);
   Future<UserDetailModel> getDetailUser(String link);
-
 }
 
 class UsersRemoteDataSourceImpl implements UsersRemoteDataSource {
@@ -18,11 +18,9 @@ class UsersRemoteDataSourceImpl implements UsersRemoteDataSource {
 
   @override
   Future<List<UsersModel>> getUsersList(int page) =>
-      _getPersonFromUrl('https://api.github.com/users');
+      _getUsersFromUrl(AppSecrets.usersListUrl);
 
-
-  Future<List<UsersModel>> _getPersonFromUrl(String url) async {
-    print(url);
+  Future<List<UsersModel>> _getUsersFromUrl(String url) async {
     final response = await client
         .get(Uri.parse(url), headers: {'Content-Type': 'application/json'});
     if (response.statusCode == 200) {
@@ -34,8 +32,8 @@ class UsersRemoteDataSourceImpl implements UsersRemoteDataSource {
       throw ServerException();
     }
   }
-  
-@override
+
+  @override
   Future<UserDetailModel> getDetailUser(String link) async {
     final response = await client
         .get(Uri.parse(link), headers: {'Content-Type': 'application/json'});
@@ -46,12 +44,6 @@ class UsersRemoteDataSourceImpl implements UsersRemoteDataSource {
       throw ServerException();
     }
   }
-
 }
 
 
-
-
-  // @override
-  // Future<List<PersonModel>> getAllPersons(int page) => _getPersonFromUrl(
-  //     'https://rickandmortyapi.com/api/character/?page=$page');

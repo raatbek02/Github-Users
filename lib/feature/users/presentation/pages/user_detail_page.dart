@@ -100,6 +100,7 @@ class _UserDetailPageState extends State<UserDetailPage> {
       style: const TextStyle(
         fontSize: 28,
         fontWeight: FontWeight.bold,
+        color: Colors.white,
       ),
     );
   }
@@ -171,14 +172,17 @@ class _UserDetailPageState extends State<UserDetailPage> {
                 Text(
                   label,
                   style: const TextStyle(
-                    fontSize: 14,
                     fontWeight: FontWeight.bold,
+                    color: Colors.white,
                   ),
                 ),
                 const SizedBox(height: 4),
                 Text(
                   text,
-                  style: const TextStyle(fontSize: 16),
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey.shade400,
+                  ),
                 ),
               ],
             ),
@@ -199,12 +203,18 @@ class _UserDetailPageState extends State<UserDetailPage> {
             const SizedBox(height: 4),
             Text(
               '${userDetail.followers}',
-              style: const TextStyle(fontSize: 16),
+              style: const TextStyle(
+                fontSize: 16,
+                color: Colors.white,
+              ),
             ),
             const SizedBox(height: 4),
             Text(
               S.of(context).followers,
-              style: const TextStyle(fontSize: 14),
+              style: const TextStyle(
+                fontSize: 14,
+                color: Colors.white,
+              ),
             ),
           ],
         ),
@@ -214,12 +224,17 @@ class _UserDetailPageState extends State<UserDetailPage> {
             const SizedBox(height: 4),
             Text(
               '${userDetail.following}',
-              style: const TextStyle(fontSize: 16),
+              style: const TextStyle(
+                fontSize: 16,
+                color: Colors.white,
+              ),
             ),
             const SizedBox(height: 4),
             Text(
               S.of(context).following,
-              style: const TextStyle(fontSize: 14),
+              style: const TextStyle(
+                color: Colors.white,
+              ),
             ),
           ],
         ),
@@ -227,5 +242,3 @@ class _UserDetailPageState extends State<UserDetailPage> {
     );
   }
 }
-
-

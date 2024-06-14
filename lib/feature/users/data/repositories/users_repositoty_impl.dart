@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
+import 'package:github_users/core/connectivity/network_info.dart';
 import 'package:github_users/core/error/exception.dart';
 import 'package:github_users/core/error/failure.dart';
-import 'package:github_users/core/platform/network.info.dart';
 import 'package:github_users/feature/users/data/datasourses/users_local_data_soure.dart';
 import 'package:github_users/feature/users/data/datasourses/users_remote_data_source.dart';
 import 'package:github_users/feature/users/data/models/users_model.dart';

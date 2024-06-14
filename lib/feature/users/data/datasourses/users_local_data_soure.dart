@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:github_users/core/error/exception.dart';
+import 'package:github_users/core/helpers/my_loggers.dart';
 import 'package:github_users/feature/users/data/models/users_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -26,7 +27,7 @@ class PersonLocalDataSourceImpl implements PersonLocalDataSource {
     final jsonPersonsList =
         sharedPreferences.getStringList(CACHED_PERSONS_LIST);
     if (jsonPersonsList!.isNotEmpty) {
-      print('Get Persons from Cache: ${jsonPersonsList.length}');
+      logger.i('Get Users from Cache: ${jsonPersonsList.length}');
       return Future.value(jsonPersonsList
           .map((person) => UsersModel.fromJson(json.decode(person)))
           .toList());
@@ -41,7 +42,7 @@ class PersonLocalDataSourceImpl implements PersonLocalDataSource {
         persons.map((person) => json.encode(person.toJson())).toList();
 
     sharedPreferences.setStringList(CACHED_PERSONS_LIST, jsonPersonsList);
-    print('Persons to write Cache: ${jsonPersonsList.length}');
+    logger.i('Users to write Cache: ${jsonPersonsList.length}');
     return Future.value(jsonPersonsList);
   }
 }

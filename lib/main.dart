@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:github_users/core/common/app_colors.dart';
@@ -9,12 +10,12 @@ import 'package:github_users/core/di/app_bloc_providers.dart';
 import 'package:github_users/feature/splash/presentation/pages/splash_screen.dart';
 import 'package:github_users/generated/l10n.dart';
 import 'package:github_users/core/di/locator_service.dart' as di;
-
-
+import 'package:google_fonts/google_fonts.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await di.init();
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(const MyApp());
 }
 
@@ -49,6 +50,9 @@ class MyApp extends StatelessWidget {
                 background: AppColors.mainBackground,
               ),
               scaffoldBackgroundColor: AppColors.mainBackground,
+              textTheme: GoogleFonts.robotoFlexTextTheme(
+                Theme.of(context).textTheme,
+              ),
             ),
             debugShowCheckedModeBanner: false,
             home: const SplashScreen(),
