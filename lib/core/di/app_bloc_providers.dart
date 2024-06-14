@@ -17,6 +17,7 @@ class AppBlocProviders extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+       
         BlocProvider<LanguageBloc>(
           create: (context) => LanguageBloc(),
         ),

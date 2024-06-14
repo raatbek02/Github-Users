@@ -1,7 +1,6 @@
 
 
 import 'package:dartz/dartz.dart';
-import 'package:equatable/equatable.dart';
 import 'package:github_users/core/error/failure.dart';
 import 'package:github_users/core/usecases/usecase.dart';
 import 'package:github_users/feature/users/domain/entities/user_detail_entity.dart';

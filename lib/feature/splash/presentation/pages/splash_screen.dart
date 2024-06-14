@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:github_users/feature/users/presentation/pages/person_screen.dart';
 import 'package:rxdart/rxdart.dart';
@@ -65,7 +66,7 @@ void _navigateToNextScreen() {
                   'from',
                   style: TextStyle(
                     fontSize: 14,
-                    color: Colors.white, 
+                    color: Colors.white,
                   ),
                 ),
               ),
@@ -85,7 +86,7 @@ void _navigateToNextScreen() {
                       'Microsoft',
                       style: TextStyle(
                         fontSize: 18,
-                        color: Colors.white, 
+                        color: Colors.white,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -99,7 +100,4 @@ void _navigateToNextScreen() {
     );
   }
 }
-
-
-
 
